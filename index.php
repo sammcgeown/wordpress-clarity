@@ -1,0 +1,28 @@
+
+<?php get_header(); ?>
+      <div class="content-container">
+        <div class="content-area col-xs">
+        <?php if(is_home() || is_category()) { ?>
+          <div class="card-columns">
+          <?php 
+            if ( have_posts() ) : while ( have_posts() ) : the_post();
+              get_template_part( 'content', get_post_format() );
+            endwhile; endif; 
+          ?>
+          </div><!--./card-columns-->
+          <?php } else {
+              if ( have_posts() ) : while ( have_posts() ) : the_post();
+              get_template_part( 'content', get_post_format() );
+            endwhile; endif; 
+          } ?>
+          <nav>
+            <span class="label"><?php next_posts_link( '<< Older posts' ); ?></span>
+            <span class="label"><?php previous_posts_link( 'Newer posts >>' ); ?></span>
+          </nav>
+
+        </div><!-- /.content-area -->
+        <?php get_sidebar(); ?>
+      </div><!-- /.content-container -->
+
+
+<?php get_footer(); ?>
