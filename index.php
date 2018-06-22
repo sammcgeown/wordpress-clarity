@@ -1,7 +1,7 @@
 
 <?php get_header(); ?>
-      <div class="content-container">
-        <div class="content-area col-xs">
+      <div class="content-container row">
+        <div class="content-area col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <?php if(is_home() || is_category()) { ?>
           <div class="card-columns">
           <?php 

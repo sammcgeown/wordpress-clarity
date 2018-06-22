@@ -47,12 +47,14 @@
       <div class="header-nav">
       </div> <!-- /.header-nav -->
       <div class="header-actions">
-        <?php if(get_theme_mod('ClarityShowHeaderSearch')) { get_search_form(); } ?>
-        <?php if(get_theme_mod('ClarityShowHeaderAdmin')) { ?>
+        <?php if(get_theme_mod('ClarityShowHeaderSearch')) { 
+          get_search_form();
+        }
+        if(get_theme_mod('ClarityShowHeaderAdmin')) { ?>
           <a href="<?php echo get_admin_url(); ?>" class="nav-link nav-icon"><clr-icon shape="cog"></clr-icon></a>
         <?php }
         if(get_theme_mod('ClarityShowHeaderRSS')) {  ?>
-        <a href="<?php bloginfo('rss2_url'); ?>" class="nav-link nav-icon"><clr-icon shape="code" title="RSS"></clr-icon></a>
+          <a href="<?php bloginfo('rss2_url'); ?>" class="nav-link nav-icon"><clr-icon shape="code" title="RSS"></clr-icon></a>
         <?php } ?>
       </div>
     </header>
