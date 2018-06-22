@@ -35,9 +35,9 @@ function clarity_theme_options($wp_customize) {
         'clarity_theme_options', 
         array(
             'title'       => __( 'Clarity Theme Settings', 'clarity' ),
-            'priority'    => 100,
+            'priority'    => 1,
             'capability'  => 'edit_theme_options',
-            'description' => __('Configure colour schemes', 'clarity'), 
+            'description' => __('Configure theme options', 'clarity'), 
         ) 
     );
     $wp_customize->add_setting(
@@ -63,7 +63,7 @@ function clarity_theme_options($wp_customize) {
     );
     $wp_customize->add_control(
         'ClarityHeaderColour', array(
-            'label'        => 'Select header colour',
+            'label'        => 'Select header options',
             'section'    => 'clarity_theme_options',
             'type'      =>  'select',
             'choices'   =>  array(
@@ -76,7 +76,55 @@ function clarity_theme_options($wp_customize) {
             )
         )
     );
+    $wp_customize->add_setting(
+        'ClarityShowHeaderSearch', array(
+            'default'   => '1',
+        )
+    );
+    $wp_customize->add_control(
+        'ClarityShowHeaderSearch', array(
+            'label'        => 'Show search bar in header',
+            'section'    => 'clarity_theme_options',
+            'settings'  => 'ClarityShowHeaderSearch',
+            'type'      =>  'checkbox',
+            'sanitize_callback' => 'clarity_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_setting(
+        'ClarityShowHeaderAdmin', array(
+            'default'   => '1',
+        )
+    );
+    $wp_customize->add_control(
+        'ClarityShowHeaderAdmin', array(
+            'label'        => 'Show admin link in header',
+            'section'    => 'clarity_theme_options',
+            'settings'  => 'ClarityShowHeaderAdmin',
+            'type'      =>  'checkbox',
+            'sanitize_callback' => 'clarity_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_setting(
+        'ClarityShowHeaderRSS', array(
+            'default'   => '1',
+        )
+    );
+    $wp_customize->add_control(
+        'ClarityShowHeaderRSS', array(
+            'label'        => 'Show RSS link in header',
+            'section'    => 'clarity_theme_options',
+            'settings'  => 'ClarityShowHeaderRSS',
+            'type'      =>  'checkbox',
+            'sanitize_callback' => 'clarity_sanitize_checkbox',
+        )
+    );
+
+    function clarity_sanitize_checkbox( $checked ) {
+        // Boolean check.
+        return ( ( isset( $checked ) && true == $checked ) ? true : false );
+    }
 }
+// Custom Logo Support
 add_theme_support( 'custom-logo' );
 function clarity_custom_logo() {
     $defaults = array(
@@ -87,6 +135,7 @@ function clarity_custom_logo() {
         'header-text' => array( 'site-title', 'site-description' ),
     );
     add_theme_support( 'custom-logo', $defaults );
+
 }
 add_action( 'after_setup_theme', 'clarity_custom_logo' );
 
