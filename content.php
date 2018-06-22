@@ -1,6 +1,6 @@
 
 	<?php if(is_home() || is_category()) { ?>
-			<div class="">
+			<!-- <div> -->
 				<a href="<?php echo get_the_permalink(); ?>" class="card clickable">
 					<div class="card-header"><?php the_title(); ?></div>
 					<div class="card-block">
@@ -23,9 +23,9 @@
 						</div>
 					</div>
 				</a>
-			</div>
+			<!-- </div> -->
 	<?php } else { ?>
-		<div class="blog-post">
+		<div class="blog-post col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
 		<h2 class="blog-post-title"><?php the_title(); ?></h2>
 		<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
 		</div><!-- /.blog-post -->
