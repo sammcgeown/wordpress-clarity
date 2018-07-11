@@ -4,7 +4,6 @@
 					<div class="card-header"><?php the_title(); ?></div>
 					<div class="card-block">
 						<div class="card-media-block">
-							<!-- <?php the_post_thumbnail('thumbnail', array('class' => 'card-media-image')); ?> -->
 							<div class="card-media-desciption">
 								<span class="card-media-title"><?php the_date('d/m/Y'); ?> | <?php the_author(); ?></span>
 							</div>
@@ -12,6 +11,7 @@
 					</div>
 					<div class="card-block">
 						<div class="card-text">
+							<?php the_post_thumbnail('thumbnail', array('class' => 'card-media-image')); ?>
 							<?php the_excerpt(); ?>
 						</div>
 					</div>

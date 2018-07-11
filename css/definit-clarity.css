@@ -12,6 +12,11 @@ nav.sidenav > div.nav {
     padding: 0px 10px;
 }
 
+img.card-media-image {
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+
 /* div.branding.dropdown {
     display: none;
     padding: 0px !important;
