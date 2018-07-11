@@ -1,9 +1,10 @@
 <?php
 
-function clarity_custom_new_menu() {
-  register_nav_menu('clarity-header-navigation',__( 'Clarity Header Navigation' ));
+function clarity_main_menu() {
+    register_nav_menu('clarity-header-navigation',__( 'Clarity Header Navigation' ));
+    register_nav_menu('clarity-mobile-navigation',__( 'Clarity Mobile Navigation' ));
 }
-add_action( 'init', 'clarity_custom_new_menu' );
+add_action( 'init', 'clarity_main_menu' );
 
 
 function clarity_menu_add_class( $atts, $item, $args ) {

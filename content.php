@@ -1,19 +1,12 @@
 
-	<?php if(is_home() || is_category()) { ?>
-			<!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12"> -->
+	<?php if(is_home() || is_category() || is_author()) { ?>
 				<a href="<?php echo get_the_permalink(); ?>" class="card clickable">
 					<div class="card-header"><?php the_title(); ?></div>
 					<div class="card-block">
 						<div class="card-media-block">
-							<?php the_post_thumbnail('thumbnail', array('class' => 'card-media-image')); ?>
+							<!-- <?php the_post_thumbnail('thumbnail', array('class' => 'card-media-image')); ?> -->
 							<div class="card-media-desciption">
-								<span class="card-media-title">
-										<?php the_author_link(); ?>
-								</span><br />
-								<span class="card-media-text">
-									<?php the_date(); ?>
-
-								</span>
+								<span class="card-media-title"><?php the_date('d/m/Y'); ?> | <?php the_author(); ?></span>
 							</div>
 						</div>
 					</div>
@@ -23,19 +16,14 @@
 						</div>
 					</div>
 				</a>
-			<!-- </div> -->
 	<?php } else { ?>
-		<div class="card-header"><?php the_title(); ?></div>
+		<div class="card-header"><h1><?php the_title(); ?></h1></div>
 		<div class="card-block">
 			<div class="card-media-block">
 				<?php the_post_thumbnail('thumbnail', array('class' => 'card-media-image')); ?>
 				<div class="card-media-desciption">
 					<span class="card-media-title">
-							<?php the_author_link(); ?>
-					</span><br />
-					<span class="card-media-text">
-						<?php the_date(); ?>
-
+							<?php the_author_posts_link(); ?> | <?php the_date('d/m/Y'); ?> | <?php echo get_the_tag_list('Tags: ',', '); ?>
 					</span>
 				</div>
 			</div>

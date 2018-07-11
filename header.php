@@ -21,6 +21,7 @@
     <script src="<?php echo get_bloginfo('template_directory'); ?>/js/clarity-icons.min.js"></script>
     <script src="<?php echo get_bloginfo('template_directory'); ?>/js/custom-elements.min.js"></script>
     <script src="<?php echo get_bloginfo('template_directory'); ?>/js/clr-icons.min.js"></script>
+    <script src="<?php echo get_bloginfo('template_directory'); ?>/js/definit-clarity.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,6 +34,12 @@
   <div class="main-container">
     <header class="header <?php echo get_theme_mod( 'ClarityHeaderColour', 'clarity-ui.css' ); ?>">
       <div class="branding">
+        <!-- <div class="branding dropdown">
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()"><clr-icon shape="bars" class="clarity-nav-menu"></clr-icon></a>
+          <div class="dropdown-content" id="dropdown-content">
+            <?php wp_nav_menu( array( 'theme_location' => 'clarity-header-navigation', 'container_class' => 'nav' ) ); ?>
+          </div>
+        </div> -->
         <a href="<?php echo get_bloginfo( 'wpurl' );?>" class="nav-link">
           <?php
           if ( has_custom_logo() ) {
@@ -44,7 +51,7 @@
           <span class="title"><?php echo get_bloginfo( 'name' ); ?></span>
         </a>
       </div>
-      <div class="header-nav">
+      <div class="header-nav"> 
       </div> <!-- /.header-nav -->
       <div class="header-actions">
         <?php if(get_theme_mod('ClarityShowHeaderSearch')) { 
@@ -59,5 +66,5 @@
       </div>
     </header>
     <nav class="subnav">
-      <?php wp_nav_menu( array( 'theme_location' => 'clarity-header-navigation', 'container_class' => 'nav' ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'clarity-header-navigation', 'container_class' => 'nav' ) ); ?>
     </nav>
