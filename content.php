@@ -1,5 +1,5 @@
 
-	<?php if(is_home() || is_category() || is_author()) { ?>
+	<?php if(is_home() || is_category() || is_author() || is_search()) { ?>
 				<a href="<?php echo get_the_permalink(); ?>" class="card clickable">
 					<div class="card-header"><?php the_title(); ?></div>
 					<div class="card-block">

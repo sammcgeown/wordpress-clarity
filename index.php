@@ -2,7 +2,7 @@
 <?php get_header(); ?>
       <div class="content-container row">
         <div class="content-area col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
-        <?php if(is_home() || is_category() || is_author()) { ?>
+        <?php if(is_home() || is_category() || is_author() || is_search()) { ?>
           <div class="card-columns card-columns-2">
           <?php
             if ( have_posts() ) : while ( have_posts() ) : the_post();
