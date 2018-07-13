@@ -17,6 +17,11 @@ img.card-media-image {
     margin: 0px 10px 0px 0px;
 }
 
+li.current-menu-item > a.nav-link {
+        box-shadow: 0 -3px 0 #007cbb inset;
+        transition: box-shadow 0.2s ease-in;
+}
+
 /* div.branding.dropdown {
     display: none;
     padding: 0px !important;
